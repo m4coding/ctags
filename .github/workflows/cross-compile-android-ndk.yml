@@ -79,4 +79,6 @@ jobs:
       
       - run: ls -lh ${{env.output_path}}
       
-      - run: file ${{env.output_path}}/ctags
+      - run: ls -lh ${{env.output_path}}/bin
+      
+      - run: file ${{env.output_path}}/bin/ctags
