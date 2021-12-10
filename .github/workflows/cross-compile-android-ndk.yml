@@ -43,7 +43,7 @@ jobs:
           TARGET=aarch64-linux-android
           
           #OUTPUT_PATH=~/ctags-out
-          echo "::set-env name=output_path::~/ctags-out"
+          echo "output_path=~/ctags-out" >> $GITHUB_ENV
           
           COLOR_PURPLE='\033[0;35m'       # Purple
           COLOR_GREEN='\033[0;32m'        # Green
@@ -59,7 +59,7 @@ jobs:
           }
            
           run ./configure \
-              --prefix=${evn.output_path} \
+              --prefix=${{env.output_path}} \
               --host=$TARGET \
               --disable-iconv \
               --disable-xml \
@@ -75,4 +75,4 @@ jobs:
       
       - run: make V=1
       
-      - run: file ~/${evn.output_path}/bin/ctags
+      - run: file ~/${{env.output_path|}/bin/ctags
