@@ -75,6 +75,8 @@ jobs:
       
       - run: make V=1 
       
+      - run: make install
+      
       - run: ls -lh ${{env.output_path}}
       
       - run: file ${{env.output_path}}/ctags
