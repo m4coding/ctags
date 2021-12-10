@@ -42,8 +42,8 @@ jobs:
           #TARGET=armv7a-linux-androideabi
           TARGET=aarch64-linux-android
           
-          #OUTPUT_PATH=~/ctags-out
-          echo "output_path=~/ctags-out" >> $GITHUB_ENV
+          OUTPUT_PATH=~/ctags-out
+          echo "output_path=$OUTPUT_PATH" >> $GITHUB_ENV
           
           COLOR_PURPLE='\033[0;35m'       # Purple
           COLOR_GREEN='\033[0;32m'        # Green
@@ -59,7 +59,7 @@ jobs:
           }
            
           run ./configure \
-              --prefix=${{env.output_path}} \
+              --prefix=$OUTPUT_PATH \
               --host=$TARGET \
               --disable-iconv \
               --disable-xml \
