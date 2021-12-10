@@ -75,4 +75,4 @@ jobs:
       
       - run: make V=1
       
-      - run: file ~/${{env.output_path|}/bin/ctags
+      - run: file ${{env.output_path}}/bin/ctags
