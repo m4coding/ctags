@@ -86,5 +86,5 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: bin
-          path: ${{ github.workspace }}/package
+          path: ${{ env.output_path }}
         name: 'Upload Package'
