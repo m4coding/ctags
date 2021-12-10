@@ -82,3 +82,9 @@ jobs:
       - run: ls -lh ${{env.output_path}}/bin
       
       - run: file ${{env.output_path}}/bin/ctags
+      
+      - uses: actions/upload-artifact@v1
+        with:
+          name: bin
+          path: ${{ github.workspace }}/package
+        name: 'Upload Package'
