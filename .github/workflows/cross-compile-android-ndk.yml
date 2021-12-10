@@ -73,6 +73,8 @@ jobs:
               AR=$AR \
               RANLIB=$RANLIB
       
-      - run: make V=1
+      - run: make V=1 
       
-      - run: file ${{env.output_path}}/bin/ctags
+      - run: ls -lh ${{env.output_path}}
+      
+      - run: file ${{env.output_path}}/ctags
