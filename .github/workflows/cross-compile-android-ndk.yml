@@ -39,7 +39,8 @@ jobs:
           export CPPFLAGS="--sysroot $SYSROOT -Qunused-arguments"
           export LDFLAGS="--sysroot $SYSROOT"
           
-          TARGET=armv7a-linux-androideabi
+          #TARGET=armv7a-linux-androideabi
+          TARGET=aarch64-linux-android
           
           COLOR_PURPLE='\033[0;35m'       # Purple
           COLOR_GREEN='\033[0;32m'        # Green
@@ -70,4 +71,4 @@ jobs:
       
       - run: make V=1
       
-      - run: file ctags | grep 'ELF 32-bit LSB shared object, ARM, EABI5'
+      - run: file ctags
